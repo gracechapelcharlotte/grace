@@ -1,10 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { AppComponent } from './app.component';
 import { LiveComponent } from './live/live.component';
-
+import { BibleModule } from './bible/bible.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +10,8 @@ import { LiveComponent } from './live/live.component';
     LiveComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BibleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
