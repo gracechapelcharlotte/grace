@@ -1,5 +1,7 @@
 export interface BibleModel {
-  books: BibleBook[];
+  books: {
+    books: BibleBook[]
+  };
 }
 
 export interface BibleBook {

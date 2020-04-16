@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BibleModel } from './bible.model';
-// import * as bibleData from '../../assets/dataFIles/kjv';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class BibleService {
+  readonly BibleLinkUrl = '../assets/dataFIles/kjv.json';
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
-  getBibleData() {
-    // return bibleData.Bible;
+  getBibleData(): Observable<BibleModel> {
+    return this.http.get<BibleModel>(this.BibleLinkUrl);
   }
 }

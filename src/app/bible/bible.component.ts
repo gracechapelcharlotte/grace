@@ -11,8 +11,10 @@ export class BibleComponent implements OnInit {
   constructor(private bibleService: BibleService) { }
 
   ngOnInit() {
-    this.vers = this.bibleService.getBibleData();
-    // console.log('this.vers : ', this.vers);
+    this.vers = this.bibleService.getBibleData().subscribe( response => {
+      console.log('response: ', response.books[0]);
+      }, error => {
+        console.log('error: ', error);
+      });
   }
-
 }
